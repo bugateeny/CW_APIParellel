@@ -1,0 +1,26 @@
+
+//Create JOB Callout (POST)
+        String responseJC =
+                given().log().all().header("Content-Type", "application/json")
+                        .body(CallOut_Payload.jobCallOutAPI("ADE004", "1st CCTV Call out "))  // Dynamically control data  when payload is concatenated.  Objects in json can be changed here  or remove to use original payload
+                        .when().post("jobs/reactive").
+                        then().assertThat().statusCode(201)
+                        .body("body[0].orderNumber", equalTo("DODDS-REF4"))
+                        .body("body[0].siteAccount", equalTo("ADE004"))
+                        .extract().response().asString();
+
+
+        System.out.println(responseJC); // body repsonse wrapped in response variable
+
+//        JsonPath js = new JsonPath(response); // for parsing json body response
+        JsonPath jsPut = reUsableMethods.rawToJson(responseJC);
+
+        String jobId = jsPut.getString("body[0].jobId"); // convert json to string and get value in jobId
+        String engineerName = jsPut.getString("body[0].engineer");
+        String href = jsPut.getString("body[0].links");
+
+        System.out.println(System.lineSeparator());
+        System.out.println("JOBID Extracted=      " + jobId);
+        System.out.println("ENGR NAME Extracted=  " + engineerName);
+        System.out.println("HREF Extracted=  " + href);
+        System.out.println(System.lineSeparator());

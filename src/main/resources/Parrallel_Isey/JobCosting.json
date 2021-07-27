@@ -1,0 +1,36 @@
+//Job costing
+//get
+//http://192.168.132.176:54040/api.vixen/jobs/costing/status/F?company=01&sort=status
+
+
+//POSST  http://192.168.132.176:54040/api.vixen/jobs/costing
+{
+  "companyNumber": "01",
+  "contact": "John",
+  "description": "yyyyyyyy costing installation New Call Out",
+  "siteAccount": "ADE002",
+  "orderNumber": "DODDS-REF2",
+  "jobId": "",
+  "jobNo": "",
+  "subJobNo": "",
+  "priority": "1",
+  "contract": "100140"
+}
+
+
+
+
+//PUT   http://192.168.132.176:54040/api.vixen/jobs/costing/id/01M00104000
+
+{
+  "companyNumber": "01",
+  "contact": "John",
+  "description": "yyyyyyyy costing installation New Call Out",
+  "siteAccount": "ADE004",
+  "orderNumber": "DODDS-REF4",
+  "jobId": "",
+  "jobNo": "",
+  "subJobNo": "",
+  "priority": "1",
+  "contract": "100140"
+}

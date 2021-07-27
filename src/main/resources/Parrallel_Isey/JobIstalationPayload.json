@@ -1,0 +1,31 @@
+costing  installation
+POST
+//http://192.168.132.176:54040/api.vixen/jobs/installation
+
+{
+  "companyNumber": "01",
+  "contact": "John",
+  "description": "costing installation New Call Out",
+  "siteAccount": "ADE004",
+  "orderNumber": "DODDS-REF4",
+  "jobId": "",
+  "jobNo": "",
+  "subJobNo": "",
+  "priority": "1",
+  "contract": "100140"
+}
+
+UPDATE  costing  installation
+//st URL
+//http://192.168.132.176:54040/api.vixen/jobs/installation/id/01M00102000
+
+{
+  "companyNumber": "01",
+  "contact": "John",
+  "description": "UPDATED costing installation New Call Out",
+  "siteAccount": "ADE004",
+  "orderNumber": "DODDS-REF4",
+
+  "priority": "7",
+  "contract": "100140"
+}
